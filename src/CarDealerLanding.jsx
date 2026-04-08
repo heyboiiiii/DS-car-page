@@ -1,5 +1,15 @@
+import React from "react";
+import { useState } from "react";
+
 import logo from "./assets/DS_logo-removebg-preview.png";
 import agencia_picture from "./assets/agencia_foto.jpeg";
+
+import instagramIcon from "./assets/icons8-instagram-windows-11-color-32.png";
+import tiktokIcon from "./assets/icons8-tiktok-ios-17-filled-32.png";
+import facebookIcon from "./assets/icons8-facebook-32.png";
+import youtubeIcon from "./assets/icons8-youtube-24.png";
+
+
 
 export default function CarDealerLanding() {
   const cars = [
@@ -96,73 +106,44 @@ export default function CarDealerLanding() {
             
           </div>
           <nav className="hidden md:flex gap-8 text-m">
-            <a href="#" className="hover:text-black">Inicio</a>
-            <a href="#" className="hover:text-black">Inventario</a>
-            <a href="#" className="hover:text-black">Nosotros</a>
-            <a href="#" className="hover:text-black">Contacto</a>
+            <a href="#begin" className="hover:text-black">Inicio</a>
+            <a href="#inventory" className="hover:text-black">Inventario</a>
+            <a href="#us" className="hover:text-black">Nosotros</a>
+            <a href="#contact" className="hover:text-black">Contacto</a>
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="text-center py-20 px-6">
+      <section id ="begin" className="text-center py-20 px-6">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           ENCUENTRA EL AUTO <br /> DE TUS SUEÑOS
         </h1>
         <p className="text-gray-600 mb-12">
           Explora nuestro inventario de vehículos de alta calidad.
         </p>
-        <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition">
+        <a href="#inventory">
+          <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition">
           Ver Inventario
-        </button>
+          </button>
+        </a>
       </section>
 
       {/* Inventory */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
+      <section id="inventory" className="max-w-6xl mx-auto px-6 pb-20">
         <h2 className="text-2xl font-semibold text-center mb-10">
           Nuestro Inventario Destacado
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {cars.map((car, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
-            >
-              <img
-                src={car.img}
-                alt={car.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6 text-center">
-                <h3 className="font-semibold text-lg">{car.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{car.desc}</p>
-                <a href={car.link} target="_blank" rel="noopener noreferrer">
-                  <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300">
-                    Ver Detalles
-                  </button>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-        {displayInventory && (
-          <div className="text-center mt-10">
-            <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={hideInventory}>
-              Ocultar Inventario
-            </button>
-          </div>
-        )}
+        <Inventory displayInventory={displayInventory} cars={cars} />
+
+        <InventoryButton cars ={cars} displayInventory={displayInventory} showInventory={showInventory} hideInventory={hideInventory} />
+    
         
-        <div className="text-center mt-10">
-          <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={showInventory}>
-            Ver Más
-          </button>
-        </div>
       </section>
 
       {/* US */}
-      <section className="bg-white py-16">
+      <section id="us" className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-4">
@@ -198,7 +179,7 @@ export default function CarDealerLanding() {
       </section>
       
       {/* Contact */}
-      <section className="py-16">
+      <section id="contact" className="py-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
 
           <div className="flex text-center justify-center items-center gap-4 text-gray-600 border-2 border-gray-300 rounded-xl p-6 max-w-md mx-auto">
@@ -212,7 +193,29 @@ export default function CarDealerLanding() {
           </div>
           {/* Social media */}
           <div>
-
+              <h3 className="text-lg font-semibold mt-8 mb-4">Seguinos en nuestras redes sociales</h3>
+              <div className="flex justify-center gap-6 align-items-center">
+                <div>
+                  <a href="https://www.instagram.com/ds.vehiculos/" target="_blank" rel="noopener noreferrer">
+                    <img src={instagramIcon} alt="Instagram" className="w-22 h-22" />
+                  </a>
+                </div>
+                <div>
+                  <a href="https://www.tiktok.com/@ds.vehculos" target="_blank" rel="noopener noreferrer">
+                    <img src={tiktokIcon} alt="TikTok" className="w-22 h-22" />
+                  </a>
+                </div>
+                <div>
+                  <a href="https://www.facebook.com/daniel.soria.71" target="_blank" rel="noopener noreferrer">
+                    <img src={facebookIcon} alt="Facebook" className="w-22 h-22" />
+                  </a>
+                </div>
+                <div>
+                  <a href="https://www.youtube.com/@ds.vehiculos" target="_blank" rel="noopener noreferrer">
+                    <img src={youtubeIcon} alt="YouTube" className="w-8 h-8" />
+                  </a>
+                </div>
+              </div>
           </div>
         </div>
       </section>
@@ -225,4 +228,114 @@ export default function CarDealerLanding() {
       </footer>
     </div>
   );
+}
+
+function InventoryButton({cars,displayInventory,showInventory,hideInventory}){
+  if(displayInventory){
+
+    return(
+      <div className="text-center mt-10">
+        <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={hideInventory}>
+          Ocultar Inventario
+        </button>
+      </div>
+    );}
+    else{
+      if(cars.length > 6){
+        return(
+        <div className="text-center mt-10">
+          <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={showInventory}>
+            Ver Más
+          </button>
+        </div>
+        );
+      }else{
+        return(null);
+      }
+      
+    }
+}
+
+function Inventory({displayInventory,cars}){
+  if(displayInventory){
+  return(
+    <div className="grid md:grid-cols-3 gap-8">
+          {cars.map((car, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+            >
+              <img
+                src={car.img}
+                alt={car.name}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="font-semibold text-lg">{car.name}</h3>
+                <p className="text-gray-500 text-sm mb-4">{car.desc}</p>
+                <a href={car.link} target="_blank" rel="noopener noreferrer">
+                  <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    Ver Detalles
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>  
+  );
+  }else{
+    if (cars.length > 3){
+       return(
+        <div className="grid md:grid-cols-3 gap-8">
+          {cars.slice(0, 3).map((car, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+            >
+              <img
+                src={car.img}
+                alt={car.name}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="font-semibold text-lg">{car.name}</h3>
+                <p className="text-gray-500 text-sm mb-4">{car.desc}</p>
+                <a href={car.link} target="_blank" rel="noopener noreferrer">
+                  <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    Ver Detalles
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div> 
+      );
+    }else{
+      return(
+         <div className="grid md:grid-cols-3 gap-8">
+          {cars.map((car, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+            >
+              <img
+                src={car.img}
+                alt={car.name}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 text-center">
+                <h3 className="font-semibold text-lg">{car.name}</h3>
+                <p className="text-gray-500 text-sm mb-4">{car.desc}</p>
+                <a href={car.link} target="_blank" rel="noopener noreferrer">
+                  <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300">
+                    Ver Detalles
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>  
+      );
+    }
+  }
 }
