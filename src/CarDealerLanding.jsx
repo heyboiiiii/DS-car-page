@@ -153,7 +153,7 @@ export default function CarDealerLanding() {
               Somos DS Vehículos...
               <br />
               <br />
-              Buscamos brindar la mejor experiencia de compra de autos usados en Avellaneda y sus alrededores.
+              Buscamos brindar la mejor experiencia de compra de autos 0km y usados de calidad en Avellaneda y sus alrededores.
               <br />
               <br />
               📍Te esperamos en Av. Centenario Uruguayo 83(Avellaneda) para brindarte la Atención que te mereces !!! 
@@ -162,7 +162,7 @@ export default function CarDealerLanding() {
               👉🏼Consultanos por Amplia Financiación a tasa fija 
               <br />
               <br />
-              ⚠️Evaluamos tu Usado via On Line 
+              ⚠️Evaluamos tu Usado para Permuta o Consignación via On Line
             </p>
             <a href="https://wa.me/5491169339029" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-900 text-white px-6 py-3 rounded-xl">
