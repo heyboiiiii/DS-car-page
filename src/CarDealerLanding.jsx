@@ -38,8 +38,48 @@ export default function CarDealerLanding() {
       desc: "",
       img: "https://http2.mlstatic.com/D_NQ_NP_2X_933518-MLA97215337879_112025-F.webp",
       link: "https://auto.mercadolibre.com.ar/MLA-3040013126-ford-fiesta-kinetic-16-se-_JM#polycard_client=search-desktop&search_layout=grid&position=6&type=item&tracking_id=9b861b03-372c-471c-9907-02d392aad73d"
+    },
+    {
+      name: "Ford Ranger 3.2 Cd 4x2 Xlt Tdci 200cv",
+      desc: "",
+      img: "https://http2.mlstatic.com/D_Q_NP_729315-MLA91516435897_092025-F.webp",
+      link: "https://auto.mercadolibre.com.ar/MLA-2765357236-ford-ranger-32-cd-4x2-xlt-tdci-200cv-_JM#polycard_client=search-desktop&search_layout=grid&position=7&type=item&tracking_id=15acb29c-0db8-42e8-89a8-67254795bd48"
+    },
+    {
+      name: "Ford Ecosport 1.5 Freestyle 123cv 4x2",
+      desc: "",
+      img: "https://http2.mlstatic.com/D_Q_NP_626352-MLA81902008489_012025-F.webp",
+      link: "https://auto.mercadolibre.com.ar/MLA-2827846722-ford-ecosport-15-freestyle-123cv-4x2-_JM#polycard_client=search-desktop&search_layout=grid&position=8&type=item&tracking_id=15acb29c-0db8-42e8-89a8-67254795bd48"
+    },
+    {
+      name: "Chevrolet Spark 1.0 Lt",
+      desc: "",
+      img: "https://http2.mlstatic.com/D_Q_NP_667994-MLA93464162781_092025-F.webp",
+      link: "https://auto.mercadolibre.com.ar/MLA-1666948039-chevrolet-spark-10-lt-_JM#polycard_client=search-desktop&search_layout=grid&position=9&type=item&tracking_id=15acb29c-0db8-42e8-89a8-67254795bd48"
+    },
+    {
+      name: "Fiat Uno 1.3 Fire Way",
+      desc: "",
+      img: "https://http2.mlstatic.com/D_Q_NP_858777-MLA106695753929_022026-F.webp",
+      link: "https://auto.mercadolibre.com.ar/MLA-1666819451-fiat-uno-13-fire-way-_JM#polycard_client=search-desktop&search_layout=grid&position=10&type=item&tracking_id=15acb29c-0db8-42e8-89a8-67254795bd48"
+    },
+    {
+      name: "Fiat Uno 1.3 Fire Way",
+      desc: "",
+      img: "https://http2.mlstatic.com/D_Q_NP_838071-MLA91526567713_092025-F.webp",
+      link: "https://auto.mercadolibre.com.ar/MLA-2765448284-fiat-uno-13-fire-way-_JM#polycard_client=search-desktop&search_layout=grid&position=11&type=item&tracking_id=15acb29c-0db8-42e8-89a8-67254795bd48"
     }
+    
   ];
+
+  const [displayInventory,setDisplayInventory] = useState(false);
+
+  const showInventory = () => {
+    setDisplayInventory(true);
+  }
+  const hideInventory = () => {
+    setDisplayInventory(false);
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
@@ -105,6 +145,19 @@ export default function CarDealerLanding() {
               </div>
             </div>
           ))}
+        </div>
+        {displayInventory && (
+          <div className="text-center mt-10">
+            <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={hideInventory}>
+              Ocultar Inventario
+            </button>
+          </div>
+        )}
+        
+        <div className="text-center mt-10">
+          <button className="bg-gray-900 text-white px-6 py-3 rounded-xl shadow hover:bg-black transition" onClick={showInventory}>
+            Ver Más
+          </button>
         </div>
       </section>
 
