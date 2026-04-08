@@ -1,3 +1,6 @@
+import logo from "../assets/DS_logo-removebg-preview.png";
+import agencia_picture from "../assets/agencia_foto.jpeg";
+
 export default function CarDealerLanding() {
   const cars = [
     {
@@ -44,7 +47,7 @@ export default function CarDealerLanding() {
       <header className="bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-12 h-12 rounded-xl bg-gray-200"><img src="../public/DS_logo-removebg-preview.png" alt="Logo" /></div>
+            <div className="w-12 h-12 rounded-xl bg-gray-200"><img src={logo} alt="Logo" /></div>
             
             <div>
               <span className="font-semibold text-lg">DS Vehículos</span>
@@ -135,7 +138,7 @@ export default function CarDealerLanding() {
           </div>
 
           <img
-            src="../public/agencia_foto.jpeg"
+            src={agencia_picture}
             className="rounded-2xl shadow w-full"
           />
         </div>
