@@ -1,5 +1,5 @@
-import logo from "../assets/DS_logo-removebg-preview.png";
-import agencia_picture from "../assets/agencia_foto.jpeg";
+import logo from "./assets/DS_logo-removebg-preview.png";
+import agencia_picture from "./assets/agencia_foto.jpeg";
 
 export default function CarDealerLanding() {
   const cars = [
